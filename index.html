@@ -16,7 +16,7 @@
         <p class="mt-3">１，所属分会</p>
         <p class="mt-n1">　　※わからない場合は【わからない】を選択</p>
         
-         <select name="pref">
+         <select name="分会">
            <option value="">所属分会</option>
            <option value="白神">白神</option>
            <option value="大久保">大久保</option>
@@ -120,12 +120,12 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const bangou = $('input[name="bangou"]').val();
-                const temperature  = $('input[name="temperature"]').val();
-                const shushoujou  = $('input[name="shushoujou"]').val();
-                const family = $('input[name="family"]').val();
-                const msg = `${name}\n${bangou}\n${temperature}\n${shushoujou}\n${family}`;
+                const 分会    = $('input[name="分会"]').val();
+                const 氏名 = $('input[name="氏名"]').val();
+                const 現場  = $('input[name="現場"]').val();
+                const 悩み  = $('input[name="悩み"]').val();
+                const 対象者 = $('input[name="対象者"]').val();
+                const msg = `${分会}\n${氏名}\n${現場}\n${悩み}\n${対象者}`;
                 sendText(msg);
                 return false;
             });
