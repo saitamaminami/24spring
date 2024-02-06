@@ -13,11 +13,10 @@
     <p class="text-center">アンケートに回答した組合員全員に景品をプレゼント！</p>
     <p class="text-center">※景品は5月頃配布予定（一人一回答まで）</p>
     <form class="w-75 mx-auto">
-    <form name="form1">
         <p class="mt-3">１，所属分会</p>
         <p class="mt-n1">　　※わからない場合は【わからない】を選択</p>
         
-         <select name="分会">
+         <select name="分会" id="分会" required>
            <option value="">所属分会</option>
            <option value="白神">白神</option>
            <option value="大久保">大久保</option>
@@ -66,7 +65,7 @@
          <p class="mt-3">４，仕事の悩みや困っていることはありますか？</p>
          <p class="mt-n1">　　（例）不払いにあっている、現場のトイレが少ない など</p>
          <div>
-            <input class="form-control w-100 mt-1" name="悩み" required>
+            <input class="form-control w-100 mt-1" name="悩み" >
             <br><br>
             <hr>
          </div>
@@ -121,9 +120,9 @@
 
         $(function () {
             $('form').submit(function () {
-                const 分会 = document.form1.分会;
-                const num = 分会.selectedIndex;
-                const str = 分会.options[num].value;
+                var 分会 = document.getElementById("分会");
+                console.log(分会.value); // 白神
+                const 分会 = $('input[name="分会"]').val();
                 const 氏名 = $('input[name="氏名"]').val();
                 const 現場 = $('input[name="現場"]').val();
                 const 悩み = $('input[name="悩み"]').val();
