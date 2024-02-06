@@ -16,7 +16,7 @@
         <p class="mt-3">１，所属分会</p>
         <p class="mt-n1">　　※わからない場合は【わからない】を選択</p>
         
-         <select name="分会" id="分会" required>
+         <select name="分会">
            <option value="">所属分会</option>
            <option value="白神">白神</option>
            <option value="大久保">大久保</option>
@@ -44,20 +44,18 @@
            <option value="中央">中央</option>
            <option value="【わからない】">【わからない】</option>
            </select>
-           </p>
-           <p id="所属分会"></p>
            <br><br>
            <hr>
          </div>
 
-         <p class="mt-3">２，氏名（漢字フルネーム）</p>
+         <p class="mt-3" required>２，氏名（漢字フルネーム）</p>
          <div>
             <input class="form-control w-100 mt-1" name="氏名" required>
             <br><br>
             <hr>
          </div>
          <div>
-         <p class="mt-3"　required>３，主な現場を選択</p>
+         <p class="mt-3" required>３，主な現場を選択</p>
          <input id="radio-a" type="radio" name="現場" value="ゼネコン" checked><label for="radio-a">ゼネコン</label>
          <input id="radio-b" type="radio" name="現場" value="大手ハウスメーカー"><label for="radio-b">大手ハウスメーカー</label>
          <input id="radio-c" type="radio" name="現場" value="その他" checked><label for="radio-c">その他</label>
@@ -67,14 +65,14 @@
          <p class="mt-3">４，仕事の悩みや困っていることはありますか？</p>
          <p class="mt-n1">　　（例）不払いにあっている、現場のトイレが少ない など</p>
          <div>
-            <input class="form-control w-100 mt-1" name="悩み" >
+            <input class="form-control w-100 mt-1" name="悩み">
             <br><br>
             <hr>
          </div>
          <p></p>
          <div>
          <p class="mt-n1">５，現在、組合員を増やすキャンペーン【拡大月間】を行っています</p>
-         <p class="mt-3"　required>　　埼玉土建に紹介できる未加入の仲間・知り合いが・・・</p>
+         <p class="mt-3" required>　　埼玉土建に紹介できる未加入の仲間・知り合いが・・・</p>
          <input id="radio-d" type="radio" name="対象者" value="いるよ！" checked><label for="radio-d">いるよ！</label>
          <input id="radio-e" type="radio" name="対象者" value="今はいないけど探してみる！"><label for="radio-e">今はいないけど探してみる！</label>
          <br><br>
@@ -89,13 +87,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-  　<script>
-    var 分会 = document.getElementById('分会');
-    分会.addEventListener('change', (event) => {
-      var 所属分会 = document.getElementById('所属分会');
-      所属分会.textContent = 分会.options[分会.selectedIndex].value + ":" + 分会.options[分会.selectedIndex].textContent;
-    });
-  　</script>
     <script>
 
         $(document).ready(function () {
