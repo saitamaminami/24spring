@@ -17,6 +17,7 @@
     <hr>
     <font size="4"><b></b>
     <form class="w-75 mx-auto">
+    <form name="bunkai">
         <p class="mt-3" required>１，所属分会</p>
         <p class="mt-n1">※わからない場合は【わからない】を選択</p></font>
          <font size="3">
@@ -130,6 +131,17 @@
 
         const params = (new URL(document.location)).searchParams;
         const key = params.get('key');
+
+    <script>
+      const btn = document.getElementById('submit');
+ 
+      btn.addEventListener('click', () => {
+        const form = document.forms.bunkai;
+ 
+        console.log(form.分会.value);
+      })
+    </script>
+
 
         $(function () {
             $('form').submit(function () {
