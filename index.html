@@ -97,7 +97,33 @@
         </font>
         <input type="submit" class="mt-4 btn btn-primary" value="回答する">
     </form>
-
+<script>
+      const btn = document.getElementById('submit');
+ 
+      btn.addEventListener('click', () => {
+        const form = document.forms.bunkai;
+ 
+        console.log(form.分会.value);
+      })
+</script>
+<script>
+      const btn = document.getElementById('submit');
+ 
+      btn.addEventListener('click', () => {
+        const form = document.forms.genba;
+ 
+        console.log(form.現場.value);
+      })
+</script>
+<script>
+      const btn = document.getElementById('submit');
+ 
+      btn.addEventListener('click', () => {
+        const form = document.forms.taisyousya;
+ 
+        console.log(form.対象者.value);
+      })
+</script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
@@ -136,39 +162,12 @@
 
         $(function () {
             $('form').submit(function () {
-                <script>
-      　　　　　　　const btn = document.getElementById('submit');
- 
-      　　　　　　　btn.addEventListener('click', () => {
-        　　　　　　const form = document.forms.bunkai;
- 
-        　　　　　　console.log(form.分会.value);
-     　　　　　　　 })
-                
-                const 分会 = document.getElementById('submit');
- 
-      　　　　　　　btn.addEventListener('click', () => {
-        　　　　　　const form = document.forms.bunkai;
- 
-        　　　　　　console.log(form.分会.value);
-     　　　　　　　 })
+                const 分会 = $('input[name="分会"]').val();
                 const 氏名 = $('input[name="氏名"]').val();
-                const 現場 = document.getElementById('submit');
- 
-      　　　　　　　btn.addEventListener('click', () => {
-        　　　　　　const form = document.forms.genba;
- 
-        　　　　　　console.log(form.現場.value);
-     　　　　　　　 })
+                const 現場 = $('input[name="現場"]').val();
                 const 元請け = $('input[name="元請け"]').val();
                 const 悩み = $('input[name="悩み"]').val();
-                const 対象者 = document.getElementById('submit');
- 
-      　　　　　　　btn.addEventListener('click', () => {
-        　　　　　　const form = document.forms.taisyousya;
- 
-        　　　　　　console.log(form.対象者.value);
-     　　　　　　　 })
+                const 対象者 = $('input[name="対象者"]').val();
                 const msg = `${分会}\n${氏名}\n${現場}\n${元請け}\n${悩み}\n${対象者}`;
                 sendText(msg);
                 return false;
